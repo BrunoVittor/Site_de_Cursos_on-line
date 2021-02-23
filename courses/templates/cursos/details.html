@@ -25,16 +25,39 @@
         <div class="l-box">
             <h4 class="content-subhead">Sobre o Curso</h4>
             {{ course.about|linebreaks }}
+            <div class="pure-g-r content-ribbon" id="contato">
+                <div class="pure-u-1">
+                    <h3>Tire sua dúvida sobre o Curso</h3>
+                    <form class="pure-form pure-form-aligned">
+                        {% csrf_token %}
+                        <fieldset>
+                            <table>
+                                <tbody>
+                                {{ forms.as_table }}
+                                </tbody>
+                            </table>
+                            <div class="pure-controls">
+                                <button type="submit" class="pure-button pure-button-primary">Enviar</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
     <div class="pure-u-1-3">
         <div class="l-box">
             {% if course.image %}
-            <img src="{{ course.image.url }}" alt="" />
+            <img src="{{ course.image.url }}" alt=""/>
             {% else %}
-            <img src="{% static 'img/python.jpeg' %}" alt="" />
+            <img src="{% static 'img/python.jpeg' %}" alt=""/>
             {% endif %}
         </div>
     </div>
 </div>
+<div>
+
+
+</div>
+
 {% endblock %}

@@ -23,3 +23,10 @@ class Course(models.Model):
     class Meta:
         verbose_name = 'Curso'
         verbose_name_plural = 'Cursos'
+
+
+''' @models.permalink
+ def get_absolute_url(self):
+     return ('details', (), {'slug': self.slug})'''
+
+
